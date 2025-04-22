@@ -20,15 +20,16 @@ const useGames = (gameQuery: GameQuery) =>
     queryFn: ({ pageParam }) =>
       apiClient.getAll({
         params: {
-          genres: gameQuery.genre?.id,
-          parent_platforms: gameQuery.platform?.id,
+          genres: gameQuery.genreId,
+          parent_platforms: gameQuery.platformId,
           ordering: gameQuery.ordering,
           search: gameQuery.searchText,
-          page: pageParam
+          page: pageParam,
         },
       }),
     initialPageParam: 1,
-    getNextPageParam: (lastPage, allPages) => lastPage.next ? allPages.length + 1 : undefined,
+    getNextPageParam: (lastPage, allPages) =>
+      lastPage.next ? allPages.length + 1 : undefined,
     staleTime: 6 * 60 * 60 * 1000, // 6h
   });
 

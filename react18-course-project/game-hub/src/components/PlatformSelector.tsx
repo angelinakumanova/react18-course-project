@@ -4,10 +4,13 @@ import usePlatforms, { Platform } from "../hooks/usePlatforms";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const PlatformSelector = ({
+  onSelectPlatform,
+  selectedPlatformId,
+}: Props) => {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -22,7 +25,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
           <MenuItem
             onClick={() => onSelectPlatform(p)}
             key={p.id}
-            fontWeight={p.id === selectedPlatform?.id ? "bold" : "normal"}
+            fontWeight={p.id === selectedPlatformId ? "bold" : "normal"}
           >
             {p.name}
           </MenuItem>
