@@ -2,7 +2,7 @@ import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 import Emoji from "./Emoji";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card >
+    <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
 
       <CardBody>
