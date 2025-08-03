@@ -1,2 +1,3 @@
-# react18-course-projects
-Projects from two React 18 courses by Code with Mosh, aimed at expanding my knowledge and practical experience with modern React.
+# React18 Course Project - Game Hub
+
+<img width="1906" height="969" alt="image" src="https://github.com/user-attachments/assets/6b64b4e4-7ba6-4192-94eb-df29081bf369" />
